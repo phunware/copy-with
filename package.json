@@ -1,6 +1,7 @@
 {
   "name": "copy-with",
   "version": "0.0.0",
+  "main": "lib/index",
   "scripts": {
     "test": "mocha -r specs/testHelper.js specs/**/*.spec.js",
     "test:coverage": "BABEL_ENV=testcoverage nyc npm test",
