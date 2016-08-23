@@ -2,6 +2,11 @@
   "name": "copy-with",
   "version": "0.0.0",
   "main": "lib/index",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/phunware/copy-with.git"
+  },
+  "license": "MIT",
   "scripts": {
     "test": "mocha -r specs/testHelper.js specs/**/*.spec.js",
     "build": "npm run clear:lib && npm run build:src",

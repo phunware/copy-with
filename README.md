@@ -4,6 +4,10 @@ A library for immutably working with JavaScript objects.
 
 ## TL;DR
 
+```sh
+$ npm install --save copy-with
+```
+
 ```js
 var cw = require('copy-with');
 var foo = { x: 1, y: 1 };
@@ -90,7 +94,7 @@ Examples:
 ```js
 var array = ['one', 'two', 'three']
 firstIfSame(array, array.map(s => s.toUpperCase())) // Returns `modified`, which is ['ONE', 'TWO', 'THREE']
-firstIfSame(array, array.map( s=> s.toLowerCase())) // Returns `original`, which is `array` (['one', 'two', 'three'])
+firstIfSame(array, array.map(s => s.toLowerCase())) // Returns `original`, which is `array` (['one', 'two', 'three'])
 ```
 
 ## Development and Contributing
@@ -115,3 +119,4 @@ We'd gladly accept PRs for the following:
 - [ ] Support testing and building on Windows (should just be matter of using  [cross-env](https://www.npmjs.com/package/cross-env) and a few other cross-platform scripts)
 - [ ] Support ES3 environments (right now there's a dependency on many of the ES5 Array.prototype methods)
 - [ ] Support arrays, especially in the `copyWithDeep` and `copyWithDeepVal` functions
+- [ ] UMD build for non-CommonJS environments
