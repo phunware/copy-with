@@ -8,4 +8,10 @@ describe('copyWithVal', function () {
     const after = copyWithVal(before, 'y', 3);
     expect(after).to.deep.equal({ x: 1, y: 3 });
   });
+
+  it('should return original input', function () {
+    const before = { x: 1, y: 2 };
+    const after = copyWithVal(before, 'x', 1);
+    expect(after).to.equal(before);
+  });
 });

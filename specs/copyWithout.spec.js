@@ -9,8 +9,8 @@ describe('copyWithout', function () {
     expect(after).to.deep.equal({ x: 1 });
 
     const beforeMultiple = { x: 1, y: 2, z: 3 };
-    const afterMultiple = copyWithout(beforeMultiple, 'y', 'z');
-    expect(afterMultiple).to.deep.equal({ x: 1 });
+    const afterMultiple = copyWithout(beforeMultiple, 'x', 'y');
+    expect(afterMultiple).to.deep.equal({ z: 3 });
   });
 
 

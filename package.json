@@ -4,7 +4,6 @@
   "main": "lib/index",
   "scripts": {
     "test": "mocha -r specs/testHelper.js specs/**/*.spec.js",
-    "test:coverage": "BABEL_ENV=testcoverage nyc npm test",
     "build": "npm run clear:lib && npm run build:src",
     "build:src": "BABEL_DISABLE_CACHE=1 babel src -d lib --copy-files",
     "clear:lib": "rm -rf lib"
