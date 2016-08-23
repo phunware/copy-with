@@ -17,6 +17,7 @@
     "mocha": "^3.0.2"
   },
   "dependencies": {
-    "object-assign": "^4.1.0"
+    "object-assign": "^4.1.0",
+    "shallow-equals": "0.0.0"
   }
 }
