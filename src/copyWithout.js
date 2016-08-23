@@ -7,9 +7,11 @@ module.exports = function without(base, ...keysToRemove) {
     return base;
   }
 
+  // Make a shallow copy
   const result = objectAssign({}, base);
-  for (const k of keysToRemove) {
+  // Delete keys from it
+  keysToRemove.forEach(k => {
     delete result[k];
-  }
+  });
   return result;
 }
