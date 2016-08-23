@@ -22,11 +22,11 @@ var bar = cw.copyWith(foo, { y: 2, z: 3 }); // { x: 1, y: 2, z: 3 }
   - (that means that output objects will work _anywhere_)
 - If an output object would be identical to the input, just return the input.
   - This preserves referential equality and allows comparisons like this:
-  
+
     ```js
     if (prevObj === newObj) { /* `newObj` has definitely changed */ }
     ```
-    
+
   - This works very nicely with [Redux](http://redux.js.org/), among other functionally-inspired libraries and patterns!
 
 ## API
@@ -108,6 +108,7 @@ Clone this repo, and run `npm install`. You can run `npm test` to run unit tests
 ## Publishing workflow
 
 ```sh
+$ npm test
 $ npm version [major|minor|patch]
 $ npm run build
 $ npm publish
