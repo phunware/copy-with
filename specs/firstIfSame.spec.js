@@ -2,7 +2,7 @@
 const { expect } = require('chai');
 const firstIfSame = require('../src/firstIfSame');
 
-describe('firstIfSame', function () {
+describe('firstIfSame', function() {
   it('should return the first item if they are shallow-equal', function() {
     const before = { x: 1, y: 2 };
     expect(firstIfSame(before, { x: 1, y: 2 })).to.equal(before);
@@ -14,12 +14,17 @@ describe('firstIfSame', function () {
     expect(firstIfSame(before, after)).to.equal(after);
   });
 
-  it('should behave in a real world scenario with arrays', function () {
+  it('should behave in a real world scenario with arrays', function() {
     const before = ['one', 'two', 'three'];
     const after = before.map(s => s.toUpperCase());
     expect(firstIfSame(before, after)).to.equal(after);
 
     const after2 = before.map(s => s.toLowerCase());
     expect(firstIfSame(before, after2)).to.equal(before);
-  })
+  });
+
+  it('should work on primitives', function() {
+    expect(firstIfSame(1, 1)).to.equal(1);
+    expect(firstIfSame(1, 2)).to.equal(2);
+  });
 });
