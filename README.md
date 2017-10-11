@@ -88,6 +88,17 @@ copyWithDeepVal({ x: { y: { z: 1 } } }, ['x', 'y', 'z'], 2) // { x: { y: { z: 2 
 copyWithDeepVal({ x: { y: 1 } }, ['x', 'y'], 1) // Returns `input`, no changes necessary
 ```
 
+### cw.copyWithDeepFn(input, path, fn)
+
+Returns a copy of `input` where the deeply nested property at `path` (which is an array of string keys) has been set to the return value of calling `fn` with the current value. Useful for situations where you want to modify a value rather than replacing it, which would otherwise require listing the path twice.
+
+Examples:
+
+```js
+copyWithDeepFn({ x: { y: { z: 1 } } }, ['x', 'y', 'z'], z => z + 1) // { x: { y: { z: 2 } } }
+copyWithDeepFn({ x: { y: { z: [1, 2] } } }, ['x', 'y', 'z'], z => z.concat([3, 4])) // { x: { y: { z: [1, 2, 3, 4] } } }
+```
+
 ### cw.firstIfSame(original, modified)
 
 Returns `modified`, unless it is identical (given a shallow equality comparison) to `original`, in which case it returns `original`. *This function supports arrays*, unlike most functions in this library!
